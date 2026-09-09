@@ -13,7 +13,7 @@ export function Wordmark({ className = "" }: { className?: string }) {
             aria-label={`${SITE.brand} — home`}
             className={`group inline-flex items-center gap-2.5 ${className}`}
         >
-            <WiringGlyph className="text-brick" />
+            <WiringGlyph className="text-accent" />
             <span className="font-display text-[1.35rem] leading-none tracking-tight text-ink">
                 Wired <span className="text-ink-muted">for</span> Scale
             </span>
@@ -41,13 +41,13 @@ export function WiringGlyph({ className = "" }: { className?: string }) {
             />
             <path
                 d="M22 20h-8a3 3 0 0 1-3-3V9"
-                stroke="var(--color-copper)"
+                stroke="var(--color-amber)"
                 strokeWidth="1.6"
                 fill="none"
             />
             {/* nodes */}
             <circle cx="4" cy="6" r="2.4" fill="currentColor" />
-            <circle cx="22" cy="20" r="2.4" fill="var(--color-copper)" />
+            <circle cx="22" cy="20" r="2.4" fill="var(--color-amber)" />
         </svg>
     );
 }

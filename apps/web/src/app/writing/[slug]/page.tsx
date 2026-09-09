@@ -124,25 +124,39 @@ export default async function PostPage({
 
             <Link
                 href="/writing"
-                className="font-mono text-[0.75rem] uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-brick"
+                className="font-label text-[0.75rem] uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-accent"
             >
                 ← All writing
             </Link>
 
             <header className="mt-6 border-b border-line pb-8">
-                <div className="flex items-center gap-3 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-ink-muted">
-                    <span className="text-brick">{post.topic}</span>
-                    <span aria-hidden="true">·</span>
-                    <time dateTime={post.date}>{post.formattedDate}</time>
-                    <span aria-hidden="true">·</span>
-                    <span>{post.readingMinutes} min read</span>
-                </div>
-                <h1 className="mt-4 font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl">
+                <span className="pill">{post.topic}</span>
+                <h1 className="mt-4 font-display text-4xl leading-[1.06] tracking-tight text-ink sm:text-5xl">
                     {post.title}
                 </h1>
                 <p className="mt-4 text-xl leading-relaxed text-ink-soft">
                     {post.summary}
                 </p>
+                <div className="mt-6 flex items-center gap-3">
+                    <span
+                        aria-hidden="true"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-soft text-xs font-bold text-accent-deep"
+                    >
+                        AR
+                    </span>
+                    <div className="text-[0.9rem] leading-tight">
+                        <span className="font-semibold text-ink">
+                            {SITE.author.name}
+                        </span>
+                        <span className="block font-label text-[0.8rem] text-ink-muted">
+                            <time dateTime={post.date}>
+                                {post.formattedDate}
+                            </time>
+                            <span className="mx-2 text-line-strong">/</span>
+                            {post.readingMinutes} min read
+                        </span>
+                    </div>
+                </div>
             </header>
 
             <div className="prose mt-10">
@@ -168,7 +182,7 @@ export default async function PostPage({
             </div>
 
             <footer className="mt-16 border-t border-line pt-8">
-                <p className="font-mono text-[0.75rem] uppercase tracking-[0.14em] text-ink-muted">
+                <p className="font-label text-[0.75rem] uppercase tracking-[0.14em] text-ink-muted">
                     Written by {SITE.author.name}
                 </p>
                 <p className="mt-2 max-w-xl text-ink-soft">
@@ -176,7 +190,7 @@ export default async function PostPage({
                     this touched a nerve, the{" "}
                     <Link
                         href="/writing"
-                        className="text-brick underline decoration-line-strong underline-offset-2 hover:decoration-brick"
+                        className="text-accent underline decoration-line-strong underline-offset-2 hover:decoration-accent"
                     >
                         rest of the writing
                     </Link>{" "}

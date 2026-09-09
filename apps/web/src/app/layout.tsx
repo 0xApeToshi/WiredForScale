@@ -1,29 +1,22 @@
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Fraunces, JetBrains_Mono, Newsreader } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const bricolage = Bricolage_Grotesque({
     subsets: ["latin"],
-    variable: "--font-fraunces",
+    variable: "--font-bricolage",
     display: "swap",
-    axes: ["opsz", "SOFT"],
+    weight: ["600", "700", "800"],
 });
 
-const newsreader = Newsreader({
+const figtree = Figtree({
     subsets: ["latin"],
-    variable: "--font-newsreader",
-    display: "swap",
-    style: ["normal", "italic"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-    subsets: ["latin"],
-    variable: "--font-jetbrains-mono",
+    variable: "--font-figtree",
     display: "swap",
 });
 
@@ -61,10 +54,7 @@ export default function RootLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html
-            lang="en"
-            className={`${fraunces.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
-        >
+        <html lang="en" className={`${bricolage.variable} ${figtree.variable}`}>
             <body className="flex min-h-dvh flex-col">
                 <a
                     href="#main"

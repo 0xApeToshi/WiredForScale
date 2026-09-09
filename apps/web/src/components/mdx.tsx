@@ -23,7 +23,7 @@ function MdxLink({ href = "", children, ...rest }: AnchorProps) {
 /** A pull-quote / aside usable from inside MDX: <Callout>…</Callout>. */
 function Callout({ children }: { children: React.ReactNode }) {
     return (
-        <aside className="my-8 border-l-2 border-copper bg-paper-raised px-5 py-4 font-body text-ink">
+        <aside className="my-8 border-l-2 border-amber bg-paper-raised px-5 py-4 font-sans text-ink">
             {children}
         </aside>
     );

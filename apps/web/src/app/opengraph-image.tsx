@@ -14,9 +14,10 @@ export default function OpengraphImage() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                backgroundColor: "#f5f0e6",
+                backgroundColor: "#f6f1e7",
                 padding: "72px",
-                fontFamily: "Georgia, serif",
+                fontFamily: "Helvetica, Arial, sans-serif",
+                fontWeight: 700,
             }}
         >
             <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
@@ -31,23 +32,23 @@ export default function OpengraphImage() {
                     <title>Wired for Scale</title>
                     <path
                         d="M4 6h8a3 3 0 0 1 3 3v8"
-                        stroke="#8a2b2f"
+                        stroke="#12905a"
                         strokeWidth="2"
                     />
                     <path
                         d="M22 20h-8a3 3 0 0 1-3-3V9"
-                        stroke="#b56a2e"
+                        stroke="#c2872f"
                         strokeWidth="2"
                     />
-                    <circle cx="4" cy="6" r="3" fill="#8a2b2f" />
-                    <circle cx="22" cy="20" r="3" fill="#b56a2e" />
+                    <circle cx="4" cy="6" r="3" fill="#12905a" />
+                    <circle cx="22" cy="20" r="3" fill="#c2872f" />
                 </svg>
                 <div
                     style={{
                         fontSize: "26px",
                         letterSpacing: "6px",
                         textTransform: "uppercase",
-                        color: "#6f6355",
+                        color: "#77705f",
                     }}
                 >
                     {SITE.brand}
@@ -58,7 +59,7 @@ export default function OpengraphImage() {
                 style={{
                     display: "flex",
                     flexDirection: "column",
-                    color: "#1b1712",
+                    color: "#1c1a15",
                 }}
             >
                 <div style={{ fontSize: "78px", lineHeight: 1.05 }}>
@@ -70,7 +71,7 @@ export default function OpengraphImage() {
             </div>
 
             <div
-                style={{ display: "flex", fontSize: "28px", color: "#8a2b2f" }}
+                style={{ display: "flex", fontSize: "28px", color: "#12905a" }}
             >
                 {SITE.author.name} — reading the stack out loud.
             </div>

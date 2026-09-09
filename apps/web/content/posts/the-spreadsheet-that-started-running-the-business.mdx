@@ -1,38 +1,42 @@
 ---
 title: "The spreadsheet that quietly started running the business"
-summary: "It began as one person's scratch pad. Eighteen months later, three systems and a payroll number depended on a formula nobody had read. Here's how that happens, and how to find yours before it breaks."
+summary: "One person's scratch pad became the thing three systems and a payroll number depended on. I've walked into this more times than I can count. Here's how it happens and how to find yours before it burns you."
 date: "2026-08-26"
 topic: "Data"
 ---
 
-Every company has one. A spreadsheet that started as a convenience — one person, one afternoon, a quick way to track something the real system didn't handle yet. It was never meant to last. And then it did.
+I do this for a living — I get called in when the data estate is on fire — and there's one thing I find in almost every business I touch. A spreadsheet. Not a normal one. The one that quietly started running part of the company while nobody was looking.
 
-I found one recently that had quietly started running part of the business, without anyone deciding it should. A commission calculation lived in it. A Zapier automation read a cell from it every hour and pushed the result into the CRM. A second person had built a pivot table on top of it for a weekly report the founder actually trusted. None of that was written down. None of it was anyone's job to maintain.
+It always starts the same way. One person, one afternoon, a quick way to track something the "real" system couldn't do yet. It was never meant to last. Then it did.
 
-Then the person who made it changed a column order.
+The last one I found had a commission calculation in it. Fine, whatever. Except a Zapier automation was reading a cell out of it every hour and pushing that number into the CRM. And someone else had built a report on top of it that the founder actually trusted and quoted in meetings. None of this was written down. None of it was anyone's job. Then the person who made it reordered a column, and the whole thing started lying to everyone at once.
 
-## Why this is normal
+## Why I'm not mad at the spreadsheet
 
-Nobody sat down and decided the spreadsheet should run commission logic. It happened the way everything happens in a growing business: someone optimized for the next thirty days. The tool that would have done it properly cost money, or needed a developer, or would have taken two weeks — and the spreadsheet took ten minutes and worked.
+Let me be clear: the spreadsheet isn't the problem. Spreadsheets are incredible. I'd defend them all day.
 
-The problem isn't the spreadsheet. Spreadsheets are extraordinary. The problem is that a spreadsheet has no idea it's important. It won't warn you. It won't fail loudly. It will let you reorder a column, paste over a formula, or filter and forget, and it will keep producing a number the whole time. The number will just be wrong.
+The problem is that a spreadsheet has no idea it's important. It won't warn you. It won't throw an error. You can paste over a formula, reorder a column, filter and forget, and it will keep spitting out a number the entire time. The number is just wrong now. And you won't find out until it's expensive.
+
+That's the whole thing. A real system tells you when it breaks. A spreadsheet that grew into a system tells you nothing, because it doesn't know what it became.
 
 <Callout>
-A real system tells you when it breaks. A spreadsheet that grew into a system tells you nothing — because it doesn't know it became one.
+Nobody decided this thing should run commissions. Someone was optimizing for the next thirty days, the way we all do, and eighteen months later it's wired into three other systems.
 </Callout>
 
 ## How to find yours
 
-You don't need to audit every file. You need to ask three questions.
+You don't need to audit everything. Ask three questions.
 
-- **What does something else read automatically?** Any spreadsheet an automation, a script, or a scheduled job touches has stopped being a document and become an interface. Interfaces need contracts. Cell B7 is not a contract.
-- **What produces a number a decision hangs on?** Payouts, forecasts, the report the founder quotes in the board meeting. If a number leaves the spreadsheet and enters a decision, trace where it came from.
-- **What breaks if the author leaves?** If one person is the only one who understands the sheet, the sheet is a single point of failure wearing the costume of a document.
+- **Does something read it automatically?** If an automation, a script, or a scheduled job touches it, it stopped being a document. It's an interface now. And cell B7 is a terrible interface.
+- **Does a number leave it and enter a decision?** Payouts, forecasts, the figure the founder repeats to the board. Trace where that number is born.
+- **What happens if the person who made it leaves?** If one human is the only one who understands it, that's not a spreadsheet. That's a single point of failure in a costume.
 
-## What to actually do
+## What I actually do about it
 
-Not "migrate everything to a database." That's the overreaction, and it's how you spend three months rebuilding something that worked. The move is smaller: make the critical ones **loud**.
+Not "rebuild it in a database." That's the panic move, and I've watched people burn three months rebuilding something that was working fine. Don't.
 
-Add a reconciliation check — a second calculation, from a different source, that should always agree with the first, and that shouts when it doesn't. Lock the columns something else depends on. Write one paragraph, in plain language, at the top of the sheet: what this is, what reads it, and what breaks if you change it. That paragraph is worth more than any migration.
+Make the important ones loud instead. Add a reconciliation check — a second number, from a different source, that should always match the first and screams when it doesn't. Lock the columns other things depend on. And write one plain-English paragraph at the top: what this is, what reads it, what breaks if you touch it. That paragraph is worth more than any migration you're imagining.
 
-The goal isn't to eliminate the spreadsheet. It's to know you have one, and to make sure the day it breaks is a day you hear about — not a quarter later, in a number that was quietly wrong the whole time.
+The goal was never to kill the spreadsheet. It's to know you have one, and to make sure the day it breaks is a day you hear about it — not a quarter later, in a number that was quietly wrong the whole time.
+
+If you've got one of these, you already know exactly which one I mean. Go read it before it reads you.

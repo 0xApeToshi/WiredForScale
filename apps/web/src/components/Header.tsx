@@ -8,12 +8,12 @@ export function Header() {
             <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5 sm:px-8">
                 <Wordmark />
                 <nav aria-label="Primary">
-                    <ul className="flex items-center gap-6 font-mono text-[0.8rem] uppercase tracking-[0.14em] text-ink-soft">
+                    <ul className="flex items-center gap-6 font-label text-[0.8rem] uppercase tracking-[0.14em] text-ink-soft">
                         {PRIMARY_NAV.map((route) => (
                             <li key={route.href}>
                                 <Link
                                     href={route.href}
-                                    className="transition-colors hover:text-brick"
+                                    className="transition-colors hover:text-accent"
                                 >
                                     {route.label}
                                 </Link>

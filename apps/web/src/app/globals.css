@@ -2,27 +2,29 @@
 
 /*
  * Wired for Scale — theme.
- * Palette and type carry over from Andrija's CV: warm paper, near-black ink,
- * a deep brick-red signal, a copper accent, editorial serif + mono.
+ * Warm business-editorial: warm cream paper, near-black ink, a money-green
+ * signal for growth/scale, a warm amber secondary. Punchy grotesk headlines
+ * over a warm humanist sans. No monospace anywhere.
  */
 @theme {
-    --color-ink: #1b1712;
-    --color-ink-soft: #4a4038;
-    --color-ink-muted: #6f6355;
-    --color-paper: #f5f0e6;
-    --color-paper-raised: #faf6ee;
-    --color-line: #e4dbca;
-    --color-line-strong: #ccc0a8;
-    --color-brick: #8a2b2f;
-    --color-brick-deep: #661e22;
-    --color-copper: #b56a2e;
+    --color-ink: #1c1a15;
+    --color-ink-soft: #4b463c;
+    --color-ink-muted: #77705f;
+    --color-paper: #f6f1e7;
+    --color-paper-raised: #fffbf3;
+    --color-line: #e6ddcc;
+    --color-line-strong: #d2c8b2;
+    --color-accent: #12905a;
+    --color-accent-deep: #0a5c39;
+    --color-accent-soft: #e2efe4;
+    --color-amber: #c2872f;
 
-    --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-    --font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
-    --font-mono:
-        var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, monospace;
+    --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
+    --font-sans:
+        var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-    --text-measure: 68ch;
+    --text-measure: 70ch;
 }
 
 @layer base {
@@ -34,17 +36,15 @@
     body {
         background-color: var(--color-paper);
         color: var(--color-ink);
-        font-family: var(--font-body);
-        font-size: 1.125rem;
-        line-height: 1.65;
-        font-synthesis-weight: none;
-        text-rendering: optimizeLegibility;
+        font-family: var(--font-sans);
+        font-size: 1.0625rem;
+        line-height: 1.6;
         -webkit-font-smoothing: antialiased;
     }
 
     ::selection {
-        background-color: var(--color-brick);
-        color: var(--color-paper);
+        background-color: var(--color-accent);
+        color: #fff;
     }
 
     h1,
@@ -52,9 +52,9 @@
     h3,
     h4 {
         font-family: var(--font-display);
-        font-weight: 460;
-        letter-spacing: -0.01em;
-        line-height: 1.08;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.06;
         color: var(--color-ink);
     }
 
@@ -63,52 +63,69 @@
     }
 
     :focus-visible {
-        outline: 2px solid var(--color-brick);
+        outline: 2px solid var(--color-accent);
         outline-offset: 3px;
     }
 }
 
-/* The kicker: uppercase tracked mono label used above headings. */
+/* Kicker: the small uppercase tracked sans label (no mono). */
 @utility kicker {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-brick);
+    color: var(--color-accent-deep);
 }
 
-/* A hairline rule that matches the CV's section dividers. */
-@utility hairline {
-    border-color: var(--color-line-strong);
+/* Label: uppercase tracked sans used for meta/nav (replaces the old mono). */
+@utility font-label {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* A small green category pill — the "blog" tell. */
+@utility pill {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent-deep);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
 }
 
 /*
- * Long-form article typography. Applied to the rendered MDX body.
+ * Long-form article typography — warm, readable, business-blog. Sans body.
  */
 .prose {
     max-width: var(--text-measure);
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
     color: var(--color-ink-soft);
-    font-size: 1.2rem;
+    font-size: 1.175rem;
     line-height: 1.72;
 }
 
 .prose > * + * {
-    margin-top: 1.35em;
+    margin-top: 1.3em;
 }
 
 .prose h2 {
-    margin-top: 2.4em;
+    margin-top: 2.2em;
     margin-bottom: 0.2em;
-    font-size: 1.85rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
     color: var(--color-ink);
 }
 
 .prose h3 {
-    margin-top: 1.9em;
+    margin-top: 1.8em;
     margin-bottom: 0.2em;
-    font-size: 1.4rem;
+    font-size: 1.32rem;
     color: var(--color-ink);
 }
 
@@ -117,21 +134,26 @@
 }
 
 .prose a {
-    color: var(--color-brick);
+    color: var(--color-accent-deep);
+    font-weight: 600;
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
-    text-decoration-color: var(--color-line-strong);
+    text-decoration-color: color-mix(
+        in srgb,
+        var(--color-accent) 45%,
+        transparent
+    );
     transition: text-decoration-color 0.15s ease;
 }
 
 .prose a:hover {
-    text-decoration-color: var(--color-brick);
+    text-decoration-color: var(--color-accent);
 }
 
 .prose strong {
     color: var(--color-ink);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .prose em {
@@ -139,15 +161,15 @@
 }
 
 .prose blockquote {
-    border-left: 2px solid var(--color-brick);
-    padding-left: 1.25rem;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1.2rem;
     font-style: italic;
     color: var(--color-ink);
 }
 
 .prose ul,
 .prose ol {
-    padding-left: 1.4rem;
+    padding-left: 1.3rem;
 }
 
 .prose ul {
@@ -156,17 +178,18 @@
 
 .prose ul > li {
     position: relative;
-    padding-left: 1.1rem;
+    padding-left: 1.2rem;
 }
 
 .prose ul > li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0.72em;
-    width: 0.42rem;
-    height: 1px;
-    background-color: var(--color-copper);
+    top: 0.62em;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent);
 }
 
 .prose ol {
@@ -174,49 +197,47 @@
 }
 
 .prose li + li {
-    margin-top: 0.4em;
+    margin-top: 0.35em;
 }
 
 .prose hr {
     border: 0;
     border-top: 1px solid var(--color-line-strong);
-    margin: 2.6em 0;
+    margin: 2.4em 0;
 }
 
+/* Inline emphasis for the rare term — a warm chip, not a code font. */
 .prose code {
-    font-family: var(--font-mono);
-    font-size: 0.85em;
-    background-color: var(--color-paper-raised);
-    border: 1px solid var(--color-line);
-    border-radius: 3px;
-    padding: 0.1em 0.35em;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.92em;
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent-deep);
+    border-radius: 4px;
+    padding: 0.06em 0.34em;
 }
 
 .prose pre {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
     line-height: 1.6;
     background-color: var(--color-ink);
     color: var(--color-paper);
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 1.1rem 1.25rem;
     overflow-x: auto;
 }
 
 .prose pre code {
     background: transparent;
-    border: 0;
     padding: 0;
     font-size: inherit;
     color: inherit;
+    font-weight: 400;
 }
 
-/* Anchored headings (rehype-slug + autolink) reveal a copper marker on hover. */
+/* Anchored headings (rehype-slug + autolink). */
 .prose :is(h2, h3) > a.anchor {
     text-decoration: none;
     color: inherit;
-}
-
-.prose :is(h2, h3) > a.anchor::before {
-    content: "";
 }

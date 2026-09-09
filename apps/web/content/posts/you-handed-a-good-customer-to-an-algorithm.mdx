@@ -1,34 +1,34 @@
 ---
-title: "You handed the definition of a good customer to an algorithm — and it obeyed"
-summary: "When you send conversions back to an ad platform, you're not measuring your customers. You're telling the algorithm which ones to go find more of. Most people never realize they gave that instruction."
+title: "You told the algorithm what a good customer is. Then you got mad when it listened."
+summary: "The day you send conversions back to Meta or Google, you stop measuring your customers and start defining them. Most founders never realize they gave that instruction — and then they blame the leads."
 date: "2026-09-02"
 topic: "Attribution"
 ---
 
-There's a feature nearly every serious advertiser turns on eventually. You send your conversions back to the ad platform — a purchase, a qualified lead, a booked call — so it can optimize toward the people most likely to do the same. Meta calls its version the Conversions API. Google has its equivalent. The pitch is simple and true: better signal, better targeting, lower cost per result.
+I've built the attribution stack for a commission-driven business — UTM tracking, funnels, pixel instrumentation, the whole thing — so let me save you a painful quarter.
 
-Here is what the pitch leaves out. The moment you send those conversions back, you have stopped measuring your customers and started *defining* them. You've handed the platform a description of a good customer, and the platform — which is very good at its job — has gone out and found you more people who match that description precisely.
+There's a feature every serious advertiser turns on eventually. You send your conversions back to the ad platform — Meta's Conversions API, Google's equivalent — so it can go find more people like the ones who convert. The pitch is true, by the way: better signal, better targeting, lower cost. I'm not here to tell you not to use it.
+
+I'm here to tell you what nobody tells you when you flip it on. The second you send those conversions back, you are no longer measuring your customers. You're *defining* them. You've handed the platform a description of a good customer, and the platform — which is genuinely excellent at its job — has gone out and found you thousands more people who match that description exactly.
 
 ## The instruction you didn't know you gave
 
-Say your conversion event fires on any form fill. You've just told the algorithm that a good customer is *someone who fills out a form*. Not someone who buys. Not someone who stays. Someone who fills out a form. So it finds you form-fillers, brilliantly, at a wonderful cost per form fill. Your pipeline swells with people who love filling out forms and never buy, and you conclude the leads have gotten worse.
+Say your conversion event fires on any form fill. Congratulations: you just told the algorithm that a good customer is *someone who fills out a form*. Not someone who buys. Not someone who sticks around. Someone who fills out a form.
 
-The leads didn't get worse. You gave a precise instruction and it was followed precisely.
+So it finds you form-fillers. Brilliantly. At a beautiful cost per form fill. Your pipeline fills up with people who love filling out forms and never buy a thing, and three weeks later you're in a meeting saying "the lead quality has really dropped."
+
+It didn't drop. You wrote a precise instruction and it was followed precisely. That's not the algorithm misbehaving. That's the algorithm doing exactly what you asked, and the gap is between what you asked and what you meant.
 
 <Callout>
-The algorithm is not misbehaving. It is doing exactly what you told it to. The gap is between what you told it and what you meant.
+This is the part that gets me. It never feels like a decision. You turned on a feature your ad rep suggested, using the default event, on a Tuesday. No screen said "you are now defining your ideal customer as anyone who trips this pixel." But that's what you did.
 </Callout>
 
-## Why this is invisible
+## What to actually check
 
-Nobody experiences this as a decision. You turned on a feature your ad rep recommended, using the default event, on a Tuesday. There was no screen that said *you are now defining your ideal customer as anyone who triggers this pixel.* The consequence arrived weeks later, wearing the disguise of a lead-quality problem, which is where the conversation stays — because lead quality feels like a sales problem, not a configuration you set and forgot.
+- **Look at the event you're really sending.** Not the one you think you're sending — go open it. Does firing it genuinely mean "good customer," or just "someone did a thing on the site"?
+- **Optimize toward the money.** If a good customer is one who pays and stays, feed back the payment, or a later-stage signal that tracks with staying. Not the cheap top-of-funnel event that's easy to fire.
+- **Send quality, not just volume.** The platforms let you pass a value or a downstream signal now. A closed deal three weeks later is a far better instruction than a click today. Use it.
 
-This is the whole shape of the thing this blog is about. The most consequential decisions in a modern business aren't made in meetings. They're made in a settings panel, once, by someone optimizing for the next thirty days, and then they run silently for a year.
+You don't need to understand the machine learning. Honestly, you don't. You need to know you're handing it an instruction, read that instruction back to yourself in plain English, and make sure it says what you actually want.
 
-## What to check
-
-- **What event are you actually sending back?** Not what you think you're sending. Go look at the event and ask: does triggering this genuinely mean *good customer*, or just *someone who did a thing*?
-- **Send the event that matches the money.** If your good customer is one who pays and stays, optimize toward the payment — or toward a downstream signal that correlates with staying — not the form fill that's easy to fire.
-- **Feed back quality, not just conversion.** The platforms increasingly let you send a value or a later-stage signal. A closed deal three weeks later is a better instruction than a click today.
-
-You don't need to understand the machine learning. You need to know that you're giving it an instruction, read the instruction back to yourself in plain English, and make sure it says what you mean. That's not a technical skill. It's the difference between delegating and abdicating.
+That's not a technical skill. That's the difference between delegating and abdicating — and it's the whole game.

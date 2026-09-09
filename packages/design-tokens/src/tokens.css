@@ -2,35 +2,37 @@
  * Wired for Scale — design tokens as CSS custom properties.
  *
  * Font families are wired to the CSS variables that next/font sets
- * (--font-fraunces, --font-newsreader, --font-jetbrains-mono) with static
- * fallbacks, so this file is usable with or without the app's font loader.
+ * (--font-bricolage, --font-figtree) with static fallbacks, so this file is
+ * usable with or without the app's font loader. No monospace.
  */
 
 :root {
     /* Ink */
-    --wfs-ink: #1b1712;
-    --wfs-ink-soft: #4a4038;
-    --wfs-ink-muted: #6f6355;
+    --wfs-ink: #1c1a15;
+    --wfs-ink-soft: #4b463c;
+    --wfs-ink-muted: #77705f;
 
     /* Paper */
-    --wfs-paper: #f5f0e6;
-    --wfs-paper-raised: #faf6ee;
+    --wfs-paper: #f6f1e7;
+    --wfs-paper-raised: #fffbf3;
 
     /* Hairlines */
-    --wfs-line: #e4dbca;
-    --wfs-line-strong: #ccc0a8;
+    --wfs-line: #e6ddcc;
+    --wfs-line-strong: #d2c8b2;
 
-    /* Signal + accent */
-    --wfs-brick: #8a2b2f;
-    --wfs-brick-deep: #661e22;
-    --wfs-copper: #b56a2e;
+    /* Accent + secondary */
+    --wfs-accent: #12905a;
+    --wfs-accent-deep: #0a5c39;
+    --wfs-accent-soft: #e2efe4;
+    --wfs-amber: #c2872f;
 
     /* Type */
-    --wfs-font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-    --wfs-font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
-    --wfs-font-mono:
-        var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, monospace;
+    --wfs-font-display:
+        var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
+    --wfs-font-sans:
+        var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
     /* Measure */
-    --wfs-measure: 68ch;
+    --wfs-measure: 70ch;
 }

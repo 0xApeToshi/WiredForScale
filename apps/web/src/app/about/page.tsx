@@ -91,13 +91,13 @@ export default function AboutPage() {
 
             <div className="mt-12 border-t border-line pt-8">
                 <p className="kicker">Find me</p>
-                <ul className="mt-4 flex flex-wrap gap-x-8 gap-y-3 font-mono text-sm">
+                <ul className="mt-4 flex flex-wrap gap-x-8 gap-y-3 font-label text-sm">
                     <li>
                         <a
                             href={SITE.socials.github.url}
                             target="_blank"
                             rel="me noopener noreferrer"
-                            className="text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-brick"
+                            className="text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-accent"
                         >
                             GitHub / {SITE.socials.github.handle}
                         </a>
@@ -107,7 +107,7 @@ export default function AboutPage() {
                             href={SITE.socials.linkedin.url}
                             target="_blank"
                             rel="me noopener noreferrer"
-                            className="text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-brick"
+                            className="text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-accent"
                         >
                             LinkedIn / {SITE.socials.linkedin.handle}
                         </a>
@@ -115,7 +115,7 @@ export default function AboutPage() {
                     <li>
                         <a
                             href={`mailto:${SITE.author.email}`}
-                            className="text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-brick"
+                            className="text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-accent"
                         >
                             {SITE.author.email}
                         </a>
@@ -127,7 +127,7 @@ export default function AboutPage() {
                         href={SITE.featuredWriting.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-brick underline decoration-line-strong underline-offset-2 hover:decoration-brick"
+                        className="text-accent underline decoration-line-strong underline-offset-2 hover:decoration-accent"
                     >
                         &ldquo;{SITE.featuredWriting.title}&rdquo;
                     </a>{" "}

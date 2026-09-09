@@ -46,7 +46,7 @@ export default async function HomePage() {
                 <div className="mt-9 flex flex-wrap items-center gap-4">
                     <Link
                         href="/writing"
-                        className="inline-flex items-center gap-2 rounded-sm bg-ink px-5 py-3 font-mono text-[0.8rem] uppercase tracking-[0.14em] text-paper transition-colors hover:bg-brick"
+                        className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 font-label text-[0.95rem] text-white shadow-sm transition-colors hover:bg-accent-deep"
                     >
                         Read the writing →
                     </Link>
@@ -54,19 +54,25 @@ export default async function HomePage() {
                         href={SITE.featuredWriting.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-mono text-[0.8rem] uppercase tracking-[0.14em] text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-brick"
+                        className="inline-flex items-center gap-2 font-label text-[0.95rem] text-ink-soft underline decoration-line-strong underline-offset-4 transition-colors hover:text-accent-deep"
                     >
                         {SITE.featuredWriting.label} ↗
                     </a>
                 </div>
             </section>
 
-            {/* Thesis strip */}
+            {/* Thesis strip — a numbered "growth" panel */}
             <section className="border-y border-line bg-paper-raised">
-                <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 sm:grid-cols-3 sm:px-8">
-                    {THESIS.map((item) => (
-                        <div key={item.title}>
-                            <h2 className="font-display text-xl text-ink">
+                <div className="mx-auto grid max-w-5xl gap-px overflow-hidden px-5 py-12 sm:grid-cols-3 sm:gap-0 sm:px-8">
+                    {THESIS.map((item, i) => (
+                        <div
+                            key={item.title}
+                            className="sm:px-6 sm:first:pl-0 sm:last:pr-0 sm:[&:not(:first-child)]:border-l sm:[&:not(:first-child)]:border-line"
+                        >
+                            <span className="font-display text-2xl font-extrabold tabular-nums text-accent">
+                                {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <h2 className="mt-2 font-display text-xl text-ink">
                                 {item.title}
                             </h2>
                             <p className="mt-2 text-[0.98rem] leading-relaxed text-ink-soft">
@@ -83,7 +89,7 @@ export default async function HomePage() {
                     <h2 className="kicker">Latest writing</h2>
                     <Link
                         href="/writing"
-                        className="font-mono text-[0.75rem] uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-brick"
+                        className="font-label text-[0.75rem] uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-accent"
                     >
                         All posts →
                     </Link>

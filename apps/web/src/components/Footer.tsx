@@ -12,7 +12,7 @@ export function Footer() {
                 <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
                     <div className="max-w-sm">
                         <div className="flex items-center gap-2.5">
-                            <WiringGlyph className="text-brick" />
+                            <WiringGlyph className="text-accent" />
                             <span className="font-display text-lg text-ink">
                                 {SITE.brand}
                             </span>
@@ -22,7 +22,7 @@ export function Footer() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-10 font-mono text-[0.8rem] uppercase tracking-[0.12em]">
+                    <div className="grid grid-cols-2 gap-10 font-label text-[0.8rem] uppercase tracking-[0.12em]">
                         <nav aria-label="Pages">
                             <p className="mb-3 text-ink-muted">Pages</p>
                             <ul className="space-y-2">
@@ -30,7 +30,7 @@ export function Footer() {
                                     <li key={r.href}>
                                         <Link
                                             href={r.href}
-                                            className="text-ink-soft transition-colors hover:text-brick"
+                                            className="text-ink-soft transition-colors hover:text-accent"
                                         >
                                             {r.label}
                                         </Link>
@@ -47,7 +47,7 @@ export function Footer() {
                                             href={link.href}
                                             target="_blank"
                                             rel="me noopener noreferrer"
-                                            className="text-ink-soft transition-colors hover:text-brick"
+                                            className="text-ink-soft transition-colors hover:text-accent"
                                         >
                                             {link.label}
                                         </a>
@@ -58,7 +58,7 @@ export function Footer() {
                                         href={SITE.featuredWriting.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-ink-soft transition-colors hover:text-brick"
+                                        className="text-ink-soft transition-colors hover:text-accent"
                                     >
                                         r/startups
                                     </a>
@@ -68,7 +68,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-ink-muted sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 font-label text-[0.72rem] uppercase tracking-[0.12em] text-ink-muted sm:flex-row sm:items-center sm:justify-between">
                     <span>
                         © {year} {SITE.author.name}
                     </span>

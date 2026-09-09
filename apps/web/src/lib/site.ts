@@ -1,7 +1,22 @@
 // Single source of truth for site-wide identity, copy and external links.
 
-const SITE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.wiredforscale.com";
+const DEFAULT_SITE_URL = "https://www.wiredforscale.com";
+
+// Resolve the site URL defensively: an env var that's set-but-empty ("") or not
+// a valid absolute URL must not reach `new URL(...)`, or the build throws
+// ERR_INVALID_URL. Fall back to the canonical production URL in that case.
+function resolveSiteUrl(): string {
+    const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+    if (!raw) return DEFAULT_SITE_URL;
+    try {
+        // Validate and normalise (drops any trailing slash).
+        return new URL(raw).origin;
+    } catch {
+        return DEFAULT_SITE_URL;
+    }
+}
+
+const SITE_URL = resolveSiteUrl();
 
 export const SITE = {
     brand: "Wired for Scale",
