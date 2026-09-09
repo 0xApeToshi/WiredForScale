@@ -1,0 +1,3 @@
+{
+    "extends": ["@wfs/biome-config/biome.json"]
+}

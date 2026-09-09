@@ -1,0 +1,38 @@
+---
+title: "The spreadsheet that quietly started running the business"
+summary: "It began as one person's scratch pad. Eighteen months later, three systems and a payroll number depended on a formula nobody had read. Here's how that happens, and how to find yours before it breaks."
+date: "2026-08-26"
+topic: "Data"
+---
+
+Every company has one. A spreadsheet that started as a convenience — one person, one afternoon, a quick way to track something the real system didn't handle yet. It was never meant to last. And then it did.
+
+I found one recently that had quietly started running part of the business, without anyone deciding it should. A commission calculation lived in it. A Zapier automation read a cell from it every hour and pushed the result into the CRM. A second person had built a pivot table on top of it for a weekly report the founder actually trusted. None of that was written down. None of it was anyone's job to maintain.
+
+Then the person who made it changed a column order.
+
+## Why this is normal
+
+Nobody sat down and decided the spreadsheet should run commission logic. It happened the way everything happens in a growing business: someone optimized for the next thirty days. The tool that would have done it properly cost money, or needed a developer, or would have taken two weeks — and the spreadsheet took ten minutes and worked.
+
+The problem isn't the spreadsheet. Spreadsheets are extraordinary. The problem is that a spreadsheet has no idea it's important. It won't warn you. It won't fail loudly. It will let you reorder a column, paste over a formula, or filter and forget, and it will keep producing a number the whole time. The number will just be wrong.
+
+<Callout>
+A real system tells you when it breaks. A spreadsheet that grew into a system tells you nothing — because it doesn't know it became one.
+</Callout>
+
+## How to find yours
+
+You don't need to audit every file. You need to ask three questions.
+
+- **What does something else read automatically?** Any spreadsheet an automation, a script, or a scheduled job touches has stopped being a document and become an interface. Interfaces need contracts. Cell B7 is not a contract.
+- **What produces a number a decision hangs on?** Payouts, forecasts, the report the founder quotes in the board meeting. If a number leaves the spreadsheet and enters a decision, trace where it came from.
+- **What breaks if the author leaves?** If one person is the only one who understands the sheet, the sheet is a single point of failure wearing the costume of a document.
+
+## What to actually do
+
+Not "migrate everything to a database." That's the overreaction, and it's how you spend three months rebuilding something that worked. The move is smaller: make the critical ones **loud**.
+
+Add a reconciliation check — a second calculation, from a different source, that should always agree with the first, and that shouts when it doesn't. Lock the columns something else depends on. Write one paragraph, in plain language, at the top of the sheet: what this is, what reads it, and what breaks if you change it. That paragraph is worth more than any migration.
+
+The goal isn't to eliminate the spreadsheet. It's to know you have one, and to make sure the day it breaks is a day you hear about — not a quarter later, in a number that was quietly wrong the whole time.

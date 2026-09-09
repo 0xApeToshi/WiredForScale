@@ -1,0 +1,49 @@
+---
+title: "Can you fire your developer? The exit test"
+summary: "You don't need to evaluate the quality of the work. You need to know whether you could leave. The single question that tells you how much you've actually delegated — and a pattern that keeps the answer 'yes'."
+date: "2026-09-08"
+topic: "Exit cost"
+---
+
+Most advice for non-technical founders working with developers is about judging the work: is this good code, is this the right stack, is two weeks a fair estimate. It's the wrong frame, because you can't evaluate any of it, and pretending you can just makes you easier to manage.
+
+Here's a question you *can* evaluate, and it tells you more than a code review ever would:
+
+> If this person disappeared tomorrow, could someone else take over — and how long before your business felt it?
+
+That's the exit test. It has nothing to do with whether the work is good. It's about whether you're the one who decides. And it's uncomfortable precisely because for a lot of businesses, the honest answer is *no, and we'd feel it in about an hour.*
+
+## What a failing grade looks like
+
+You fail the exit test when critical things live only in one person's head or one person's account:
+
+- The domain is registered to their personal email.
+- The server is on their hosting account, paid with their card.
+- The deploy happens from their laptop, by a process only they know.
+- The API keys, the DNS, the payment integration — all under logins nobody else has.
+
+None of this requires bad intent. It's just what accumulates when one competent person sets everything up efficiently. But the result is that you haven't hired a developer. You've married one.
+
+<Callout>
+The feature that determines your exit cost is almost never the code. It's who holds the accounts.
+</Callout>
+
+## The pattern that keeps the answer "yes"
+
+The fix is boring and structural, and you can insist on it without understanding a line of code. The principle: **the developer should be able to do all their work without ever being the owner of anything.**
+
+Concretely, and using the front door as the example — your domain and DNS:
+
+- **You** own the registrar account and the DNS. Your email, your card, your login.
+- The developer gets *delegated access* to change what they need to change — a room key, not the deed to the house.
+- When the relationship ends, you revoke the key. Nothing breaks. The site stays up. The next person gets their own key.
+
+This is the difference between handing a contractor the front door and handing them a room key. Cloudflare and every serious registrar support exactly this — scoped, revocable access — and almost nobody uses it, because the default is to just give someone the password and move on.
+
+## The register that makes it real
+
+The tool that makes the exit test pass isn't software. It's a one-page list: every account the business depends on, who owns it, who has access, and what breaks if you revoke that access. The domain. The host. The email provider. The payment processor. The analytics. Each row names an owner — and the owner should be *you*, or the company, never a contractor's personal login.
+
+Write that page and you'll find the failures immediately, because some rows won't have an answer. That blank is your exit cost, measured directly.
+
+You don't have to become technical to pass this test. You have to insist on being the owner and letting other people hold keys. That's not a coding skill. It's the whole game.

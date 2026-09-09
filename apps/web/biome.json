@@ -1,0 +1,10 @@
+{
+    "extends": ["@wfs/biome-config/biome.json"],
+    "linter": {
+        "rules": {
+            "complexity": {
+                "noImportantStyles": "off"
+            }
+        }
+    }
+}

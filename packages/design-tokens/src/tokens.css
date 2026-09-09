@@ -1,0 +1,36 @@
+/**
+ * Wired for Scale — design tokens as CSS custom properties.
+ *
+ * Font families are wired to the CSS variables that next/font sets
+ * (--font-fraunces, --font-newsreader, --font-jetbrains-mono) with static
+ * fallbacks, so this file is usable with or without the app's font loader.
+ */
+
+:root {
+    /* Ink */
+    --wfs-ink: #1b1712;
+    --wfs-ink-soft: #4a4038;
+    --wfs-ink-muted: #6f6355;
+
+    /* Paper */
+    --wfs-paper: #f5f0e6;
+    --wfs-paper-raised: #faf6ee;
+
+    /* Hairlines */
+    --wfs-line: #e4dbca;
+    --wfs-line-strong: #ccc0a8;
+
+    /* Signal + accent */
+    --wfs-brick: #8a2b2f;
+    --wfs-brick-deep: #661e22;
+    --wfs-copper: #b56a2e;
+
+    /* Type */
+    --wfs-font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+    --wfs-font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
+    --wfs-font-mono:
+        var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+    /* Measure */
+    --wfs-measure: 68ch;
+}

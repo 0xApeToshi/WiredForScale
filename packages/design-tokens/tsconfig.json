@@ -1,0 +1,9 @@
+{
+    "extends": "@wfs/typescript-config/base.json",
+    "compilerOptions": {
+        "noEmit": true,
+        "lib": ["ES2025", "DOM"]
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+}

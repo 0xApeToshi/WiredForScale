@@ -1,0 +1,39 @@
+{
+	"$schema": "https://unpkg.com/knip@latest/schema.json",
+	"workspaces": {
+		".": {
+			"entry": ["turbo.json"],
+			"project": ["turbo.json"]
+		},
+		"apps/web": {
+			"entry": [
+				"src/app/**/*.{ts,tsx}",
+				"src/app/**/route.ts",
+				"next.config.ts",
+				"mdx-components.tsx"
+			],
+			"project": ["src/**/*.{ts,tsx}"],
+			"ignore": [".next/**", "node_modules/**"]
+		},
+		"packages/design-tokens": {
+			"entry": ["src/index.ts"],
+			"project": ["src/**/*.ts"]
+		},
+		"packages/biome-config": {
+			"entry": ["biome.json"],
+			"project": ["biome.json"]
+		},
+		"packages/typescript-config": {
+			"entry": ["*.json"],
+			"project": ["*.json"]
+		}
+	},
+	"ignore": [
+		"**/*.d.ts",
+		"**/*.config.{js,ts,mjs}",
+		"**/dist/**",
+		"**/.next/**",
+		"**/node_modules/**"
+	],
+	"ignoreDependencies": ["@biomejs/biome", "turbo"]
+}

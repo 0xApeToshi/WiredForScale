@@ -1,0 +1,34 @@
+---
+title: "You handed the definition of a good customer to an algorithm — and it obeyed"
+summary: "When you send conversions back to an ad platform, you're not measuring your customers. You're telling the algorithm which ones to go find more of. Most people never realize they gave that instruction."
+date: "2026-09-02"
+topic: "Attribution"
+---
+
+There's a feature nearly every serious advertiser turns on eventually. You send your conversions back to the ad platform — a purchase, a qualified lead, a booked call — so it can optimize toward the people most likely to do the same. Meta calls its version the Conversions API. Google has its equivalent. The pitch is simple and true: better signal, better targeting, lower cost per result.
+
+Here is what the pitch leaves out. The moment you send those conversions back, you have stopped measuring your customers and started *defining* them. You've handed the platform a description of a good customer, and the platform — which is very good at its job — has gone out and found you more people who match that description precisely.
+
+## The instruction you didn't know you gave
+
+Say your conversion event fires on any form fill. You've just told the algorithm that a good customer is *someone who fills out a form*. Not someone who buys. Not someone who stays. Someone who fills out a form. So it finds you form-fillers, brilliantly, at a wonderful cost per form fill. Your pipeline swells with people who love filling out forms and never buy, and you conclude the leads have gotten worse.
+
+The leads didn't get worse. You gave a precise instruction and it was followed precisely.
+
+<Callout>
+The algorithm is not misbehaving. It is doing exactly what you told it to. The gap is between what you told it and what you meant.
+</Callout>
+
+## Why this is invisible
+
+Nobody experiences this as a decision. You turned on a feature your ad rep recommended, using the default event, on a Tuesday. There was no screen that said *you are now defining your ideal customer as anyone who triggers this pixel.* The consequence arrived weeks later, wearing the disguise of a lead-quality problem, which is where the conversation stays — because lead quality feels like a sales problem, not a configuration you set and forgot.
+
+This is the whole shape of the thing this blog is about. The most consequential decisions in a modern business aren't made in meetings. They're made in a settings panel, once, by someone optimizing for the next thirty days, and then they run silently for a year.
+
+## What to check
+
+- **What event are you actually sending back?** Not what you think you're sending. Go look at the event and ask: does triggering this genuinely mean *good customer*, or just *someone who did a thing*?
+- **Send the event that matches the money.** If your good customer is one who pays and stays, optimize toward the payment — or toward a downstream signal that correlates with staying — not the form fill that's easy to fire.
+- **Feed back quality, not just conversion.** The platforms increasingly let you send a value or a later-stage signal. A closed deal three weeks later is a better instruction than a click today.
+
+You don't need to understand the machine learning. You need to know that you're giving it an instruction, read the instruction back to yourself in plain English, and make sure it says what you mean. That's not a technical skill. It's the difference between delegating and abdicating.
